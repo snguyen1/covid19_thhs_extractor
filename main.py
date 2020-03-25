@@ -10,13 +10,13 @@ url = "https://services5.arcgis.com/ACaLB9ifngzawspq/arcgis/rest/services/COVID1
 # # Main code starts here
 
 # Get data from URL
-# data = getContent(url)
+data = getContent(url)
 
 # Only use this for testing or when today's data is already in the raw file
-data = loadTodayData()
+# data = loadTodayData()
 
 # Save raw data to raw directory
-# saveRawData(data)
+saveRawData(data)
 
 # extract and save today county data to csv directory
 counties = extractCountiesData(data)
