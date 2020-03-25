@@ -1,3 +1,4 @@
+import os
 import ssl
 import json
 from data import getContent, extractCountiesData, extractStateWideData, countiesDataToCsv, getTodayDate, getYesterdayDate, saveRawData, loadTodayData, processData, writeResult
@@ -8,6 +9,13 @@ url = "https://services5.arcgis.com/ACaLB9ifngzawspq/arcgis/rest/services/COVID1
 
 
 # # Main code starts here
+
+# create dirs to store raw files
+if not os.path.exists('raw'):
+    os.makedirs('raw')
+if not os.path.exists('csv'):
+    os.makedirs('csv')
+
 
 # Get data from URL
 data = getContent(url)
